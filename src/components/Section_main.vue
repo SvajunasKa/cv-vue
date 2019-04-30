@@ -15,10 +15,7 @@
                 </div>
             </div>
         </div>
-
     </div>
-
-
 
 </template>
 
@@ -36,13 +33,16 @@
         methods:{
             getName(variable) {
                 this.childData= variable;
+            },
+            getLocation(){
+                axios.get(' http://ip-api.com/json')
+                    .then(res => {
+                        this.city = res.data.city
+                    })
             }
         },
         mounted(){
-            axios.get(' http://ip-api.com/json')
-                .then(res => {
-                    this.city = res.data.city
-                })
+            this.getLocation()
         },
         components:{
             appModal: Modal
