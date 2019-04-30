@@ -7,7 +7,8 @@
                     <div class="col-Lg-12 col-md-12">
                         <div class="text-center" >
                           Hi,{{this.childData}} ! <br>
-                            nice to meet you
+                            nice to meet you <br>
+                            how is weather in {{this.city}} ?
                         </div>
                     </div>
 
@@ -23,18 +24,25 @@
 
 <script>
     import Modal from './subComponents/Modal'
+    import axios from 'axios'
     export default {
         name: "Section",
         data(){
             return{
-                childData: ""
+                childData: "",
+                city: ""
             }
         },
         methods:{
-
             getName(variable) {
                 this.childData= variable;
             }
+        },
+        mounted(){
+            axios.get(' http://ip-api.com/json')
+                .then(res => {
+                    this.city = res.data.city
+                })
         },
         components:{
             appModal: Modal
