@@ -1,27 +1,20 @@
 <template>
     <div class="content">
-        <div class="container">
+        <div class="container" >
             <div class="card-title">
-                <h3>Sveiki, mano vardas Svajūnas</h3>
+                <h3 v-html="$attrs.duomenys.title"></h3>
             </div>
-            <div class="card-content">
-                <p>Esu Kauno informacinių technologijų mokyklos, žiniatinklio programuotojo specialybės mokinys. Moku HTML,
-                    CSS, turiu JavaScript ir PhP programavimo pradmenis. Noriu pagilinti esamas žinias ir įgauti naujų
-                    įgūdžių darbe prie realių projektų, todėl kreipiuosi dėl galimybės atlikti praktiką Jūsų įmonėje. Esu
-                    atsakingas, žingeidus, komunikabilus, sugebu dirbti komandoje ir individualiai. Nebijau naujovių,
-                    iššūkių ir pokyčių. Dėl šių asmeninių savybių ir besikeičiančių darbo rinkos poreikių nusprendžiau
-                    keisti elektros inžinieriaus kvalifikaciją į žiniatinklio programuotojo.
-                </p>
+            <div class="card-content" >
+                <p v-html="$attrs.duomenys.description"></p>
             </div>
-
-
         </div>
     </div>
 </template>
 
 <script>
+  import data from '../data/data'
     export default {
-        name: "Section"
+        name: "Section",
     }
 </script>
 

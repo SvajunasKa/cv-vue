@@ -60,6 +60,7 @@
             display: flex;
             align-items: center;
             background-position: center;
+            background-attachment: fixed;
         }
         .text-center{
             @include font($font-regular,$black, 30px);
